@@ -300,83 +300,83 @@ module.exports = {
                     client.simpleEmbed({
                         image: `https://media.discordapp.net/attachments/937337957419999272/938725908028751882/techpoint_channel_banner_soon.jpg?width=813&height=221`
                     }, interaction.channel)
-                    // .then(() => {
-                    //     client.embed({
-                    //         title: `🥇・Badges`,
-                    //         thumbnail: "https://media.discordapp.net/attachments/937337957419999272/938725906728513576/techpoint_channel_banner_badges.jpg?width=813&height=221",
-                    //         desc: `We at Bot have a special badge system! You can find your badge via the userinfo command. Read below what each badge means`,
-                    //         fields: [
-                    //             {
-                    //                 name: `${client.emotes.badges.bot}┆Bot badge`,
-                    //                 value: `This badge is only available for the Bot(s). This way you can see even better that they belong together.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.developer}┆Developer badge`,
-                    //                 value: `This badge is only available to Bot developers. This shows that they are official developers of the bots.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.management}┆Management badge`,
-                    //                 value: `You can get this badge if you are an official management member of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.team}┆Team badge`,
-                    //                 value: `You can get this badge if you are an official team member of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.support}┆Support badge`,
-                    //                 value: `You can get this badge if you are an official support member of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.moderator}┆Moderator badge`,
-                    //                 value: `You can get this badge if you are an official moderator of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.marketing}┆Marketing badge`,
-                    //                 value: `You can get this badge if you are an official marketing member of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.event}┆Organization badge`,
-                    //                 value: `You can get this badge if you are an official organization member of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.designer}┆Designer badge`,
-                    //                 value: `You can get this badge if you are an official designer of team Bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.booster}┆Booster badge`,
-                    //                 value: `You can get this badge if you have boosted a server within our network.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.partner}┆Partner badge`,
-                    //                 value: `You can get this badge if you are official partnerd with our server.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.bug}┆Bug Hunter badge`,
-                    //                 value: `You can get this badge if you have reported more than 5 bugs in our bot.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.supporter}┆Supporter badge`,
-                    //                 value: `You can get this badge if you have given something to Bot to improve the bot even more.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.voter}┆Voter badge`,
-                    //                 value: `You can get this badge if you have voted for our bots or servers.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.vip}┆Vip badge`,
-                    //                 value: `You can get this badge if you have bought the vip role in the economy system.`,
-                    //             },
-                    //             {
-                    //                 name: `${client.emotes.badges.active}┆Active badge`,
-                    //                 value: `You can get this badge if you have bought the active role in the economy system.`,
-                    //             }
-                    //         ],
-                    //         footer: {
-                    //             text: `© TechPoint - 2022`,
-                    //             iconURL: "https://media.discordapp.net/attachments/937337957419999272/937797574440681472/techpoint_logo-min.jpg?width=812&height=812"
-                    //         }
-                    //     }, interaction.channel)
-                    // })
+                     .then(() => {
+                        client.embed({
+                             title: `🥇・Badges`,
+                            thumbnail: "https://media.discordapp.net/attachments/937337957419999272/938725906728513576/techpoint_channel_banner_badges.jpg?width=813&height=221",
+                             desc: `We at Bot have a special badge system! You can find your badge via the userinfo command. Read below what each badge means`,
+                             fields: [
+                                 {
+                                     name: `${client.emotes.badges.bot}┆Bot badge`,
+                                     value: `This badge is only available for the Bot(s). This way you can see even better that they belong together.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.developer}┆Developer badge`,
+                                     value: `This badge is only available to Bot developers. This shows that they are official developers of the bots.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.management}┆Management badge`,
+                                     value: `You can get this badge if you are an official management member of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.team}┆Team badge`,
+                                     value: `You can get this badge if you are an official team member of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.support}┆Support badge`,
+                                     value: `You can get this badge if you are an official support member of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.moderator}┆Moderator badge`,
+                                     value: `You can get this badge if you are an official moderator of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.marketing}┆Marketing badge`,
+                                     value: `You can get this badge if you are an official marketing member of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.event}┆Organization badge`,
+                                     value: `You can get this badge if you are an official organization member of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.designer}┆Designer badge`,
+                                     value: `You can get this badge if you are an official designer of team Bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.booster}┆Booster badge`,
+                                     value: `You can get this badge if you have boosted a server within our network.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.partner}┆Partner badge`,
+                                     value: `You can get this badge if you are official partnerd with our server.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.bug}┆Bug Hunter badge`,
+                                     value: `You can get this badge if you have reported more than 5 bugs in our bot.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.supporter}┆Supporter badge`,
+                                     value: `You can get this badge if you have given something to Bot to improve the bot even more.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.voter}┆Voter badge`,
+                                     value: `You can get this badge if you have voted for our bots or servers.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.vip}┆Vip badge`,
+                                     value: `You can get this badge if you have bought the vip role in the economy system.`,
+                                 },
+                                 {
+                                     name: `${client.emotes.badges.active}┆Active badge`,
+                                     value: `You can get this badge if you have bought the active role in the economy system.`,
+                                 }
+                             ],
+                             footer: {
+                                 text: `© TechPoint - 2022`,
+                                 iconURL: "https://media.discordapp.net/attachments/937337957419999272/937797574440681472/techpoint_logo-min.jpg?width=812&height=812"
+                             }
+                         }, interaction.channel)
+                     })
 
                 }
 

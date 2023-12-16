@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
 const axios = require('axios');
+
 // Check if is up to date
 const { version } = require('.././package.json');
 axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').then(res => {

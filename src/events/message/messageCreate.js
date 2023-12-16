@@ -355,9 +355,7 @@ module.exports = async (client, message) => {
     let row = new Discord.ActionRowBuilder().addComponents(
       new Discord.ButtonBuilder()
         .setLabel("Invite")
-        .setURL(
-          client.config.discord.botInvite
-        )
+        .setURL(client.config.discord.botInvite)
         .setStyle(Discord.ButtonStyle.Link),
 
       new Discord.ButtonBuilder()
@@ -366,11 +364,12 @@ module.exports = async (client, message) => {
         .setStyle(Discord.ButtonStyle.Link)
     );
 
+  // Bot
     client
       .embed(
         {
-          title: "Hi, i'm Bot",
-          desc: `Use with commands via Discord ${client.emotes.normal.slash} commands`,
+          title: `Hi, i'm ${client.user.username}!`,
+          desc: `Use with commands via Discord ${client.emotes.normal.slash}commands`,
           fields: [
             {
               name: "📨┆Invite me",
@@ -394,7 +393,7 @@ module.exports = async (client, message) => {
         },
         message.channel
       )
-      .catch(() => { });
+      .catch(() => {});
   }
 
   const cmd = await Commands.findOne({

@@ -23,7 +23,7 @@ module.exports = {
         ).
         addSubcommand(subcommand =>
             subcommand
-                .setName('profile')
+                .setName('view')
                 .setDescription('See your profile')
                 .addUserOption((option) =>
                     option.setName('user').setDescription('The user you want the profile from').setRequired(false),

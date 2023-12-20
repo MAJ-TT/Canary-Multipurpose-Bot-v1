@@ -66,7 +66,7 @@
     "node-fetch": "^2.6.6",
     "parse-ms": "^3.0.0",
     "popcat-wrapper": "^1.5.4",
-    "sourcebin": "^4.3.6",
+    "sourcebin": "^5.0.0",
     "topgg-autoposter": "^2.0.1",
     "util": "^0.12.5",
     "weather-js": "^2.0.0",

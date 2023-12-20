@@ -27,26 +27,39 @@ module.exports = async (client) => {
 
     setInterval(async function () {
         const promises = [
-            client.shard.fetchClientValues('guilds.cache.size'),
+          client.shard.fetchClientValues('guilds.cache.size'),
         ];
+      
         return Promise.all(promises)
-            .then(results => {
-                const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
-                let statuttext;
-                if (process.env.DISCORD_STATUS) {
-                    statuttext = process.env.DISCORD_STATUS.split(', ');
-                } else {
-                    statuttext = [
-                        `❓┆/help`,
-                        `💻┆${totalGuilds} servers`,
-                        `📨┆discord.gg/newjins`,
-                        `🎮┆${client.player.queue.length} songs`,
-                    ];
-                }
-                const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Playing }], status: 'idle' });
-            })
-    }, 20000)
+          .then(results => {
+            const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+      
+            let statuttext;
+            let totalUsers = 0; // Declare and initialize totalUsers here
+      
+            if (process.env.DISCORD_STATUS) {
+              statuttext = process.env.DISCORD_STATUS.split(', ');
+            } else {
+              statuttext = [
+                `❓-/help`,
+                `💻-with ${totalGuilds} servers`,
+                `📩-discord.gg/newjins`,
+                `👀-Watching ${totalUsers} users`,
+              ];
+      
+              for (const guild of client.guilds.cache) {
+                totalUsers += guild.memberCount;
+              }
+            }
+      
+            const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
+            client.user.setPresence({
+              activities: [{ name: randomText, type: Discord.ActivityType.Playing }],
+              status: 'idle',
+            });
+          });
+      }, 20000);
+      
 
     client.player.init(client.user.id);
 }

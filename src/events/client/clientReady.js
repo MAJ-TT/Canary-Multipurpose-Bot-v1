@@ -43,8 +43,8 @@ module.exports = async (client) => {
               statuttext = [
                 `❓-/help`,
                 `💻-with ${totalGuilds} servers`,
-                `📩-discord.gg/newjins`,
-                `👀-Watching ${totalUsers} users`,
+                `📨-discord.gg/newjins`,
+                `🎮-Watching ${totalUsers} users`,
               ];
       
               for (const guild of client.guilds.cache) {

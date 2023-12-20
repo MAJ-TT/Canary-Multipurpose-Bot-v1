@@ -2,15 +2,6 @@ const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
 const axios = require('axios');
-// Check if is up to date
-const { version } = require('.././package.json');
-axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').then(res => {
-    if (res.data.tag_name !== version) {
-        console.log(chalk.red.bgYellow(`Your bot is not up to date! Please update to the latest version!`, version + ' -> ' + res.data.tag_name));
-    }
-}).catch(err => {
-    console.log(chalk.red.bgYellow(`Failed to check if bot is up to date!`));
-});
 
 
 const webhook = require("./config/webhooks.json");
@@ -47,7 +38,7 @@ if (process.env.TOPGG_TOKEN) {
 console.clear();
 console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), (chalk.green(`Starting up`)), (chalk.white(`...`)))
 console.log(`\u001b[0m`)
-console.log(chalk.red(`© MAJ |  ${new Date().getFullYear()}`))
+console.log(chalk.red(`© SeaSoft |  ${new Date().getFullYear()}`))
 console.log(chalk.red(`Some rights reserved`))
 console.log(`\u001b[0m`)
 console.log(`\u001b[0m`)

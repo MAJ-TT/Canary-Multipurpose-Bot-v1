@@ -1,3 +1,4 @@
+const { User } = require('discord.js');
 const model = require('../../database/models/badge');
 const Schema = require('../../database/models/profile');
 const CreditsSchema = require("../../database/models/votecredits");
@@ -64,7 +65,7 @@ module.exports = async (client, interaction, args) => {
             const userFlags = user.flags ? user.flags.toArray() : [];
 
             client.embed({
-                title: `${client.user.username}・Profile`,
+                title: `${user.username}・Profile`,
                 desc: '_____',
                 thumbnail: user.avatarURL({ dynamic: true }),
                 fields: [{

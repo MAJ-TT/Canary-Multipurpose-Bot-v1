@@ -8,7 +8,7 @@ const CreditsSchema = require("../../database/models/votecredits");
 
 module.exports = {
     data: new ContextMenuCommandBuilder()
-        .setName('Bot profile')
+        .setName('Users profile')
         .setType(2),
 
     /** 
@@ -80,7 +80,7 @@ module.exports = {
                 const userFlags = user.flags ? user.flags.toArray() : [];
 
                 client.embed({
-                    title: `${client.user.username}・Profile`,
+                    title: `${user.nickname}・Profile`,
                     desc: '_____',
                     thumbnail: user.avatarURL({ dynamic: true }),
                     fields: [{
@@ -174,7 +174,7 @@ module.exports = {
                         inline: true
                     },
                     {
-                        name: "💳┆Dcredits",
+                        name: "💳┆Dcreditszz",
                         value: `${credits || 'None'}`,
                         inline: true
                     },

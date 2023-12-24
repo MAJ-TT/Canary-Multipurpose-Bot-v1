@@ -26,27 +26,33 @@ module.exports = async (client) => {
     });
 
     setInterval(async function () {
-        const promises = [
-            client.shard.fetchClientValues('guilds.cache.size'),
-        ];
-        return Promise.all(promises)
-            .then(results => {
-                const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
-                let statuttext;
-                if (process.env.DISCORD_STATUS) {
-                    statuttext = process.env.DISCORD_STATUS.split(', ');
-                } else {
-                    statuttext = [
-                        `/help`,
-                        `${totalGuilds} servers`,
-                        `discord.gg/NewJins`,
-                        `with MAJ in VS Code`,
-                    ];
-                }
-                const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Playing }], status: 'idle' });
-            })
+      const promises = [
+          client.shard.fetchClientValues('guilds.cache.size'),
+          client.shard.broadcastEval(client => client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0))
+      ];
+      return Promise.all(promises)
+          .then(results => {
+              const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+              const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
+              const totalMembersFormatted = totalMembers.toLocaleString();
+              const totalMembersInK = totalMembers > 999 ? (totalMembers/1000).toFixed(1) + 'k' : totalMembers;
+              let statuttext;
+              if (process.env.DISCORD_STATUS) {
+                  statuttext = process.env.DISCORD_STATUS.split(', ');
+              } else {
+                  statuttext = [
+                    `/help for help`,
+                    `${totalGuilds} servers`,
+                    `${totalMembersFormatted} members`,
+                    `discord.gg/NewJins`,
+                    `discord.gg/SeaSoft`,
+                  ];
+              }
+              const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
+              client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'idle' });
+          })
     }, 20000)
+    
 
     client.player.init(client.user.id);
 }

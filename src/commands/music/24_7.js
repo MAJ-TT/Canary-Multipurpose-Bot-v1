@@ -80,8 +80,10 @@ module.exports = async (client, interaction, args) => {
             interaction.reply(`Invalid subcommand. Please use 'enable' or 'disable'.`);
             return; // Stop the execution of the command
         }
+
     } catch (error) {
         console.error(`An error occurred in the 24/7 command: ${error}`);
         interaction.reply(`An error occurred while executing the command: ${error.message}`);
     }
 };
+a

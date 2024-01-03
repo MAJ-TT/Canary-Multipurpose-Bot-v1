@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = async (client) => {
+<<<<<<< Updated upstream
     const fields = [
         {
             name: `📺┆Activities`,
@@ -188,6 +189,190 @@ module.exports = async (client) => {
             inline: true
         },
     ];
+=======
+  const fields = [
+    {
+      name: `📺┆Activities`,
+      value: `\`/activities\``,
+      inline: true,
+    },
+    {
+      name: `🚫┆AFK`,
+      value: `\`/afk help\``,
+      inline: true,
+    },
+    {
+      name: `📣┆Announcement`,
+      value: `\`/announcement help\``,
+      inline: true,
+    },
+    {
+      name: `👮‍♂️┆Auto mod`,
+      value: `\`/automod help\``,
+      inline: true,
+    },
+    {
+      name: `⚙️┆Auto setup`,
+      value: `\`/autosetup help\``,
+      inline: true,
+    },
+    {
+      name: `🎂┆Birthday`,
+      value: `\`/birthdays help\``,
+      inline: true,
+    },
+    {
+      name: `🤖┆Bot`,
+      value: `\`/bot help\``,
+      inline: true,
+    },
+    {
+      name: `🎰┆Casino`,
+      value: `\`/casino help\``,
+      inline: true,
+    },
+    {
+      name: `⚙┆Configuration`,
+      value: `\`/config help\``,
+      inline: true,
+    },
+    {
+      name: `💻┆Custom commands`,
+      value: `\`/custom-commands help\``,
+      inline: true,
+    },
+    {
+      name: `💰┆Economy`,
+      value: `\`/economy help\``,
+      inline: true,
+    },
+    {
+      name: `👪┆Family`,
+      value: `\`/family help\``,
+      inline: true,
+    },
+    {
+      name: `😂┆Fun`,
+      value: `\`/fun help\``,
+      inline: true,
+    },
+    {
+      name: `🎮┆Games`,
+      value: `\`/games help\``,
+      inline: true,
+    },
+    {
+      name: `🥳┆Giveaway`,
+      value: `\`/giveaway help\``,
+      inline: true,
+    },
+    {
+      name: `⚙️┆Guild settings`,
+      value: `\`/guild help\``,
+      inline: true,
+    },
+    {
+      name: `🖼┆Images`,
+      value: `\`/images help\``,
+      inline: true,
+    },
+    {
+      name: `📨┆Invites`,
+      value: `\`/invites help\``,
+      inline: true,
+    },
+    {
+      name: `🆙┆Leveling`,
+      value: `\`/levels help\``,
+      inline: true,
+    },
+    {
+      name: `💬┆Messages`,
+      value: `\`/messages help\``,
+      inline: true,
+    },
+    {
+      name: `👔┆Moderation`,
+      value: `\`/moderation help\``,
+      inline: true,
+    },
+    {
+      name: `🎶┆Music`,
+      value: `\`/music help\``,
+      inline: true,
+    },
+    {
+      name: `📓┆Notepad`,
+      value: `\`/notepad help\``,
+      inline: true,
+    },
+    {
+      name: `👤┆Profile`,
+      value: `\`/profile help\``,
+      inline: true,
+    },
+    {
+      name: `📻┆Radio`,
+      value: `\`/radio help\``,
+      inline: true,
+    },
+    {
+      name: `😛┆Reaction roles`,
+      value: `\`/reactionroles help\``,
+      inline: true,
+    },
+    {
+      name: `🔍┆Search`,
+      value: `\`/search help\``,
+      inline: true,
+    },
+    {
+      name: `📊┆Server stats`,
+      value: `\`/serverstats help\``,
+      inline: true,
+    },
+    {
+      name: `⚙️┆Setup`,
+      value: `\`/setup help\``,
+      inline: true,
+    },
+    {
+      name: `🎛┆Soundboard`,
+      value: `\`/soundboard help\``,
+      inline: true,
+    },
+    {
+      name: `🗨️┆Sticky messages`,
+      value: `\`/stickymessages help\``,
+      inline: true,
+    },
+    {
+      name: `💡┆Suggestions`,
+      value: `\`/sugestions help\``,
+      inline: true,
+    },
+    {
+      name: `🤝┆Thanks`,
+      value: `\`/thanks help\``,
+      inline: true,
+    },
+    {
+      name: `🎫┆Tickets`,
+      value: `\`/tickets help\``,
+      inline: true,
+    },
+    {
+      name: `⚒️┆Tools`,
+      value: `\`/tools help\``,
+      inline: true,
+    },
+    {
+      name: `🔊┆Voice`,
+      value: `\`/voice help\``,
+      inline: true,
+    },
+  ];
+>>>>>>> Stashed changes
 
     client.on(Discord.Events.InteractionCreate, async (interaction) => {
         if (!interaction.isStringSelectMenu()) return;

@@ -112,7 +112,22 @@ module.exports = {
                 .setName('volume')
                 .setDescription('Set the music volume')
                 .addNumberOption(option => option.setName('amount').setDescription('New volume number'))
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('24_7')
+                .setDescription('Enable or disable 24/7 mode')
+                .addStringOption(option =>
+                    option.setName('mode')
+                        .setDescription('The mode of the 24/7 command')
+                        .setRequired(true)
+                        .addChoices(
+                            { name: 'Enable', value: 'enable' },
+                            { name: 'Disable', value: 'disable' }
+                        )
+                )
         ),
+        
 
     /** 
      * @param {Client} client

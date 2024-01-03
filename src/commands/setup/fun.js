@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 
 const Birthdays = require("../../database/models/birthdaychannels");
-const Chatbot = require("../../database/models/chatbot-channel");
 const Review = require("../../database/models/reviewChannels");
 const Suggestion = require("../../database/models/suggestionChannels");
 const StarBoard = require("../../database/models/starboardChannels");
@@ -12,7 +11,6 @@ module.exports = async (client, interaction, args) => {
     
     const choices = {
         birthdays : Birthdays,
-        chatbot : Chatbot,
         reviews : Review,
         suggestions : Suggestion,
         starboard : StarBoard

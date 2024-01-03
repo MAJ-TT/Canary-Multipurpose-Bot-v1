@@ -40,9 +40,11 @@ module.exports = async (client) => {
                         `❓┆/help`,
                         `💻┆${totalGuilds} servers`,
                         `📨┆discord.gg/newjins`,
-                        `🎮┆${client.player.queue.length} songs`,
                     ];
-                }
+                    if (client.player.queue) {
+                        statuttext.push(`🎮┆${client.player.queue.length} songs`);
+                    }
+                }                
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
                 client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Playing }], status: 'idle' });
             })

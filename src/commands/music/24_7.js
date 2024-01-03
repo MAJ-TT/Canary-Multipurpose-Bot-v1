@@ -78,6 +78,7 @@ module.exports = async (client, interaction, args) => {
         } else {
             console.log('Invalid subcommand'); // This will print if the subcommand is not 'enable' or 'disable'
             interaction.reply(`Invalid subcommand. Please use 'enable' or 'disable'.`);
+            return; // Stop the execution of the command
         }
     } catch (error) {
         console.error(`An error occurred in the 24/7 command: ${error}`);

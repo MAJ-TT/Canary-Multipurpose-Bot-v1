@@ -11,12 +11,12 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
 
-        let channel = interaction.member.voice ? interaction.member.voice.channel : null;
+        let channel = interaction.member.voice.channel;
         if (!channel) {
             return client.errNormal({
                 error: `The channel does not exist!`,
                 type: 'editreply'
-            }, interaction);
+            }, interaction); 
         }
 
         let player = client.player.players.get(interaction.guild.id);
@@ -32,46 +32,46 @@ module.exports = async (client, interaction, args) => {
             console.log('New player created', player);
         }
 
-        if (player && player.voiceChannel && (channel.id !== player.voiceChannel)) {
-            return client.errNormal({
-                error: `You are not in the same voice channel!`,
-                type: 'editreply'
-            }, interaction);
-        }
+        try {
+            const subcommand = args[0]; // Get the subcommand from the arguments
+            if (subcommand === 'enable') {
+                console.log('Enabling 24/7 mode');
+                player.set('24/7', true);
+                console.log('24/7 mode enabled');
+                await interaction.deferReply({ fetchReply: true });
+                await interaction.editReply('24/7 mode enabled. The bot will now stay in the voice channel even when it is empty.');
 
-        const subcommand = interaction.options.getSubcommand();
-        console.log('Subcommand:', subcommand);
+                console.log('Attempting to join the voice channel');
+                channel.join().then(connection => {
+                    console.log('Bot joined the voice channel');
+                }).catch(error => {
+                    console.error('Error when joining the voice channel:', error);
+                });
+            }
+            else if (subcommand === 'disable') {
+                console.log('Disabling 24/7 mode');
+                player.set('24/7', false);
+                console.log('24/7 mode disabled');
+                await interaction.deferReply({ fetchReply: true });
+                await interaction.editReply('24/7 mode disabled. The bot will now leave the voice channel when it is empty.');
 
-        // Defer the reply at the beginning
-        await interaction.deferReply({ fetchReply: true });
-
-        if (subcommand === 'enable') {
-            console.log('Enabling 24/7 mode');
-            player.set('24/7', true);
-            console.log('24/7 mode enabled');
-            await interaction.editReply('24/7 mode enabled. The bot will now stay in the voice channel even if there is no one there.');
-
-            console.log('Attempting to join the voice channel');
-            channel.join().then(connection => {
-                console.log('Bot joined the voice channel');
-            }).catch(error => {
-                console.error('Error when joining the voice channel:', error);
-            });
-        } else if (subcommand === 'disable') {
-            console.log('Disabling 24/7 mode');
-            player.set('24/7', false);
-            console.log('24/7 mode disabled');
-            await interaction.editReply('24/7 mode disabled. The bot will now leave the voice channel when it is empty.');
-
-            console.log('Attempting to leave the voice channel');
-            channel.leave();
-            console.log('Bot left the voice channel');
-        } else {
-            console.log('Invalid subcommand');
-            await interaction.editReply(`Invalid subcommand. Please use 'enable' or 'disable'.`);
+                console.log('Attempting to leave the voice channel');
+                channel.leave();
+                console.log('Bot left the voice channel');
+            } else {
+                console.log('Invalid subcommand');
+                await interaction.deferReply({ fetchReply: true });
+                await interaction.editReply(`Invalid subcommand. Please use 'enable' or 'disable'.`);
+            }
+        } catch (error) {
+            console.error(`An error occurred in the 24/7 command: ${error}`);
+            if (interaction.deferred || interaction.replied) {
+                await interaction.editReply(`An error occurred while executing the command: ${error.message}`);
+            } else {
+                await interaction.reply(`An error occurred while executing the command: ${error.message}`);
+            }
         }
     } catch (error) {
-        console.error(`An error occurred in the 24/7 command: ${error}`);
-        await interaction.editReply(`An error occurred while executing the command: ${error.message}`);
+        console.error(error);
     }
 };

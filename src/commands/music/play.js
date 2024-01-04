@@ -238,5 +238,20 @@ module.exports = async (client, interaction, args) => {
         }
     }
 }
-
+player.on('trackEnd', async () => {
+    if (player.autoplay) {
+        console.log('Track ended, autoplay is enabled, finding next song...');
+        // Code to find and queue the next song goes here
+        try {
+            const nextSong = await player.search('next song query', interaction.user); // replace 'next song query' with your logic to find the next song
+            player.queue.add(nextSong.tracks[0]);
+            player.play();
+            console.log('Next song is playing');
+        } catch (error) {
+            console.error('An error occurred while trying to find and play the next song:', error);
+        }
+    } else {
+        console.log('Track ended, autoplay is disabled, not finding next song');
+    }
+});
  

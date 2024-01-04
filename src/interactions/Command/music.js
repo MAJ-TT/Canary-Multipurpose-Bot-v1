@@ -126,6 +126,20 @@ module.exports = {
                             { name: 'Disable', value: 'disable' }
                         )
                 )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('autoplay')
+                .setDescription('Enable or disable autoplay')
+                .addStringOption(option =>
+                    option.setName('mode')
+                        .setDescription('The mode of the autoplay command')
+                        .setRequired(true)
+                        .addChoices(
+                            { name: 'Enable', value: 'enable' },
+                            { name: 'Disable', value: 'disable' }
+                        )
+                )
         ),
         
 

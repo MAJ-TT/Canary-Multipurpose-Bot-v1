@@ -41,11 +41,15 @@ module.exports = async (client, interaction, args) => {
 
         const subcommand = interaction.options.getSubcommand();
         console.log('Subcommand:', subcommand);
-        if(subcommand === 'enable') {
+
+        // Defer the reply at the beginning
+        await interaction.deferReply({ fetchReply: true });
+
+        if (subcommand === 'enable') {
             console.log('Enabling 24/7 mode');
             player.set('24/7', true);
             console.log('24/7 mode enabled');
-            interaction.reply('24/7 mode enabled. The bot will now stay in the voice channel even if there is no one there.');
+            await interaction.editReply('24/7 mode enabled. The bot will now stay in the voice channel even if there is no one there.');
 
             console.log('Attempting to join the voice channel');
             channel.join().then(connection => {
@@ -53,22 +57,21 @@ module.exports = async (client, interaction, args) => {
             }).catch(error => {
                 console.error('Error when joining the voice channel:', error);
             });
-        } else if(subcommand === 'disable') {
+        } else if (subcommand === 'disable') {
             console.log('Disabling 24/7 mode');
             player.set('24/7', false);
             console.log('24/7 mode disabled');
-            interaction.reply('24/7 mode disabled. The bot will now leave the voice channel when it is empty.');
+            await interaction.editReply('24/7 mode disabled. The bot will now leave the voice channel when it is empty.');
 
             console.log('Attempting to leave the voice channel');
             channel.leave();
             console.log('Bot left the voice channel');
         } else {
             console.log('Invalid subcommand');
-            interaction.reply(`Invalid subcommand. Please use 'enable' or 'disable'.`);
-            return;
+            await interaction.editReply(`Invalid subcommand. Please use 'enable' or 'disable'.`);
         }
     } catch (error) {
         console.error(`An error occurred in the 24/7 command: ${error}`);
-        interaction.reply(`An error occurred while executing the command: ${error.message}`);
+        await interaction.editReply(`An error occurred while executing the command: ${error.message}`);
     }
 };

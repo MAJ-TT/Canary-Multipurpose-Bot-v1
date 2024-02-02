@@ -14,8 +14,8 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('additem')
-                .setDescription('Add a role item to the economy store')
-                .addRoleOption(option => option.setName('role').setDescription('Select a role').setRequired(true))
+                .setDescription('Add a item to the economy store')
+                .addStringOption(option => option.setName('item').setDescription('Enter a item').setRequired(true))
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
 
         )
@@ -61,8 +61,8 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('deleteitem')
-                .setDescription('Delete a role item from the economy store')
-                .addRoleOption(option => option.setName('role').setDescription('Select a role').setRequired(true))
+                .setDescription('Delete an item from the economy store')
+                .addStringOption(option => option.setName('item').setDescription('Enter an item name').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand

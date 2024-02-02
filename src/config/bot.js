@@ -1,15 +1,14 @@
 module.exports = {
     colors: {
-        succes: '#57F287',
-        error: "#ED4245",
-        normal: "#5865F2"
+        succes: '#00B015',
+        error: "#710000",
+        normal: "#010101"
     },
 
     discord: {
         id: process.env.DISCORD_ID,
-        prefix: '!',
         footer: `© Sea Soft - ${new Date().getFullYear()}`, 
-        botInvite: `https://discord.com/oauth2/authorize?&client_id=1172904195360305183&scope=applications.commands+bot&permissions=8`,
+        botInvite: `https://discord.com/oauth2/authorize?&client_id=1177440829560856586&scope=applications.commands+bot&permissions=8`,
         serverInvite: "https://discord.gg/NwWScqzXA8",
     },
 

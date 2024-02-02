@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = new mongoose.Schema({
     Guild: String,
-    Role: String,
+    Item: String,
     Amount: Number
 });
 

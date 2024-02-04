@@ -32,17 +32,16 @@ module.exports = async (client) => {
       ];
       return Promise.all(promises)
           .then(results => {
-              const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+            //   const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
               const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
               const totalMembersFormatted = totalMembers.toLocaleString();
-              const totalMembersInK = totalMembers > 999 ? (totalMembers/1000).toFixed(1) + 'k' : totalMembers;
               let statuttext;
               if (process.env.DISCORD_STATUS) {
                   statuttext = process.env.DISCORD_STATUS.split(', ');
               } else {
                   statuttext = [
                     `/help for help`,
-                    `${totalGuilds} servers`,
+                    // `${totalGuilds} servers`,
                     `${totalMembersFormatted} members`,
                     `discord.gg/NewJins`,
                     `discord.gg/SeaSoft`,

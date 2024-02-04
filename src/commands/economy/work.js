@@ -16,7 +16,7 @@ module.exports = async (client, interaction, args) => {
       }, interaction);
     }
     else {
-      let replies = ['Programmer', 'Hacker', 'Waiter', 'Busboy', 'Chief', 'Mechanic']
+      let replies = ['MAJ Worker', 'Slide Worker', 'Got inivtes in NJ!', 'Got invites in SS!', 'Prostitue', 'Bootty Claapper']
 
       let result = Math.floor((Math.random() * replies.length));
       let amount = Math.floor(Math.random() * 100) + 1;
@@ -27,7 +27,7 @@ module.exports = async (client, interaction, args) => {
         text: `You've wokred and earned some money!`,
         fields: [
           {
-            name: `🦹‍♂️┆Crime`,
+            name: `🦹‍♂️┆Sea Job`,
             value: `${replies[result]}`,
             inline: true
           },

@@ -5,7 +5,7 @@ const Schema2 = require("../../database/models/economyTimeout");
 
 module.exports = async (client, interaction, args) => {
   let user = interaction.user;
-  let timeout = 600000;
+  let timeout = 86400000;
 
   Schema2.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, dataTime) => {
     if (dataTime && dataTime.Work !== null && timeout - (Date.now() - dataTime.Work) > 0) {
@@ -19,7 +19,7 @@ module.exports = async (client, interaction, args) => {
       let replies = ['MAJ Worker', 'Slide Worker', 'Got inivtes in NJ!', 'Got invites in SS!', 'Prostitue', 'Bootty Claapper']
 
       let result = Math.floor((Math.random() * replies.length));
-      let amount = Math.floor(Math.random() * 100) + 1;
+      let amount = Math.floor(Math.random() * 3) + 1;
 
       client.succNormal({ text: `You worked as a ${replies[result]} and earned: **${client.emotes.economy.coins} $${amount}**`, type: 'editreply' }, interaction);
 

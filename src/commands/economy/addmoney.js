@@ -25,7 +25,7 @@ module.exports = async (client, interaction, args) => {
     client.addMoney(interaction, user, parseInt(amount));
 
     setTimeout(() => {
-        Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
+        Schema.findOne({ User: user.id }, async (err, data) => {
             if (data) {
 
                 client.succNormal({

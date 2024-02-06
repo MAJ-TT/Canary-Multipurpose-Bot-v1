@@ -180,7 +180,7 @@ module.exports = {
                 inline: true,
               },
               {
-                name: "💳┆Sea Credits",
+                name: "💳┆Sea Cash",
                 value: `${credits || "None"}`,
                 inline: true,
               },

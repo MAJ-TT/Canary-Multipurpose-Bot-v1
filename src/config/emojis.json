@@ -19,7 +19,7 @@
         "info": "ℹ️",
         "arrowDown": "⬇️",
         "arrowUp": "⬆️",
-        "Sea Credits": "💳",
+        "Sea Cash": "<:sea_cash:1203778608275923064>",
         "tv": "📺",
         "slash": ""
     },
@@ -33,7 +33,7 @@
     "economy": {
         "pocket": "👛",
         "bank": "🏦",
-        "coins": "<:sea_credit:1203788163521183836>"
+        "coins": "<:sea_cash:1203778608275923064>"
     },
 
     "music": {

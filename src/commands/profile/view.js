@@ -167,7 +167,7 @@ module.exports = async (client, interaction, args) => {
               inline: true,
             },
             {
-              name: "💳┆Sea Credits",
+              name: "💳┆Sea Cashs",
               value: `${credits || "None"}`,
               inline: true,
             },

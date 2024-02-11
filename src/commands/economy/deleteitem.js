@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const store = require("../../database/models/economyStore");
+const dev = require('../../dev');
 
 module.exports = async (client, interaction, args) => {
-  const perms = await client.checkUserPerms({
-    flags: [Discord.PermissionsBitField.Flags.ManageMessages],
-    perms: [Discord.PermissionsBitField.Flags.ManageMessages]
-  }, interaction);
+  const badges = await dev.getBadges(interaction.user.id);
 
-  if (perms == false) return;
+  if (!badges.includes('DEVELOPER')) {
+    return client.errNormal({
+      error: 'You do not have permission to use this command'
+    }); 
+  }
 
   const item = interaction.options.getString('item'); // Get the item name
 

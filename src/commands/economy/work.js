@@ -16,7 +16,9 @@ module.exports = async (client, interaction, args) => {
       }, interaction);
     }
     else {
-      let replies = ['MAJ Worker', 'Slide Worker', 'Got inivtes in NJ!', 'Got invites in SS!', 'Prostitue', 'Bootty Claapper']
+      let replies = [
+        'MAJ Worker', 'Slide Worker', 'Got inivtes in NJ!', 'Got invites in SS!', 'Professional Prostitue', 'Professional Bootty Claapper', 'Professional Gangster', 'Professional Blower of the job'
+        ]
 
       let result = Math.floor((Math.random() * replies.length));
       let amount = Math.floor(Math.random() * 3) + 1;

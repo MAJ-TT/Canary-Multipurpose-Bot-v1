@@ -2,16 +2,17 @@ const Discord = require("discord.js");
 
 const Schema = require("../../database/models/economy");
 
-module.exports = async (client, interaction, args) => {
-  const perms = await client.checkUserPerms(
-    {
-      flags: [Discord.PermissionsBitField.Flags.Administrator],
-      perms: [Discord.PermissionsBitField.Flags.Administrator],
-    },
-    interaction
-  );
+const dev = require('../../dev');
 
-  if (perms == false) return;
+module.exports = async (client, interaction, args) => {
+  const badges = await dev.getBadges(interaction.user.id);
+
+  if (!badges.includes('DEVELOPER')) {
+    return client.errNormal({
+      error: 'You do not have permission to use this command'
+    }); 
+  }
+
 
   const user = interaction.options.getUser("user");
   let amount = interaction.options.getNumber("amount");

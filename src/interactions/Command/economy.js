@@ -141,8 +141,7 @@ module.exports = {
                             {name: 'Bank', value: 'bank'}
                         )
                 )
-        )
-    ),
+        ),
   /**
    * @param {Client} client
    * @param {CommandInteraction} interaction

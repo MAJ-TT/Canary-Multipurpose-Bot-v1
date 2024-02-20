@@ -35,7 +35,7 @@ module.exports = async (client, interaction, args) => {
       text: `Removed **${amount}** messages from ${user}`,
       fields: [
         {
-          name: "💬┆Total messages",
+          name: "💬 ┆ Total messages",
           value: `${data.Messages}`,
           inline: true,
         },

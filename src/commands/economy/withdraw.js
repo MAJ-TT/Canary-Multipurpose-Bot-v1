@@ -43,7 +43,7 @@ module.exports = async (client, interaction, args) => {
           text: `You've have withdrawn some money from your bank!`,
           fields: [
             {
-              name: `${client.emotes.economy.coins}┆Amount`,
+              name: `${client.emotes.economy.coins} ┆ Amount`,
               value: `$${amount}`,
               inline: true,
             },

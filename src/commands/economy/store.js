@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args, message) => {
             `**${e.Item}** - ${client.emotes.economy.coins} \`$${e.Amount}\``
         );
         await client.createLeaderboard(
-          `・${interaction.guild.name}'s Store`,
+          `・Sea Empire Store`,
           lb,
           interaction
         );
@@ -28,6 +28,7 @@ module.exports = async (client, interaction, args, message) => {
 
       //   `,
       // }, interaction.channel);
+
     });
   } catch (error) {
     console.error(error); // Log any errors

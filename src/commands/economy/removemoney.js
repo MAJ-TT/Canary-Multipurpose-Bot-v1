@@ -2,17 +2,23 @@ const Discord = require("discord.js");
 
 const Schema = require("../../database/models/economy");
 
-const dev = require('../../dev');
+const BadgeModel = require("../../database/models/badge");
 
 module.exports = async (client, interaction, args) => {
-  const badges = await dev.getBadges(interaction.user.id);
+  const isDeveloper = await BadgeModel.findOne({
+    User: interaction.user.id,
+    FLAGS: "DEVELOPER",
+  });
 
-  if (!badges.includes('DEVELOPER')) {
-    return client.errNormal({
-      error: 'You do not have permission to use this command'
-    }); 
+  if (!isDeveloper) {
+    return client.errNormal(
+      {
+        error: "You do not have permission to use this command!",
+        type: "editreply",
+      },
+      interaction
+    );
   }
-
 
   const user = interaction.options.getUser("user");
   let amount = interaction.options.getNumber("amount");
@@ -50,12 +56,12 @@ module.exports = async (client, interaction, args) => {
               text: `Removed money from a user!`,
               fields: [
                 {
-                  name: `👤┆User`,
+                  name: `👤 ┆ User`,
                   value: `<@!${user.id}>`,
                   inline: true,
                 },
                 {
-                  name: `${client.emotes.economy.coins}┆Amount`,
+                  name: `${client.emotes.economy.coins} ┆ Amount`,
                   value: `$${amount}`,
                   inline: true,
                 },

@@ -17,9 +17,9 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 
-    const familyMember = await Schema.findOne({ Guild: interaction.guild.id, User: target.id, Parent: author.id });
-    const familyMember2 = await Schema.findOne({ Guild: interaction.guild.id, User: author.id, Parent: target.id });
-    const familyMember3 = await Schema.findOne({ Guild: interaction.guild.id, User: author.id, Partner: target.id });
+    const familyMember = await Schema.findOne({  User: target.id, Parent: author.id });
+    const familyMember2 = await Schema.findOne({  User: author.id, Parent: target.id });
+    const familyMember3 = await Schema.findOne({  User: author.id, Partner: target.id });
 
     if (familyMember || familyMember2 || familyMember3) {
         return client.errNormal({
@@ -28,7 +28,7 @@ module.exports = async (client, interaction, args) => {
         }, interaction);
     }
 
-    const checkAdopt = await Schema.findOne({ Guild: interaction.guild.id, Children: target.username });
+    const checkAdopt = await Schema.findOne({   Children: target.username });
     if (checkAdopt) {
         return client.errNormal({
             error: `This user has already been adopted`,
@@ -62,29 +62,29 @@ module.exports = async (client, interaction, args) => {
     interaction.channel.awaitMessageComponent({ filter, componentType: Discord.ComponentType.Button, time: 60000 }).then(async i => {
         if (i.customId == "adopt_yes") {
 
-            Schema.findOne({ Guild: interaction.guild.id, User: author.id }, async (err, data) => {
+            Schema.findOne({  User: author.id }, async (err, data) => {
                 if (data) {
                     data.Children.push(target.username);
                     data.save();
                 }
                 else {
                     new Schema({
-                        Guild: interaction.guild.id,
-                        User: author.id,
+                         
+                       User: author.id,
                         Children: target.username
                     }).save();
                 }
             })
 
-            Schema.findOne({ Guild: interaction.guild.id, User: target.id }, async (err, data) => {
+            Schema.findOne({  User: target.id }, async (err, data) => {
                 if (data) {
                     data.Parent.push(author.username);
                     data.save();
                 }
                 else {
                     new Schema({
-                        Guild: interaction.guild.id,
-                        User: target.id,
+                         
+                       User: target.id,
                         Parent: author.username
                     }).save();
                 }

@@ -23,7 +23,6 @@ module.exports = async (client, interaction, args) => {
     data.save();
   } else {
     new Schema({
-      Guild: interaction.guild.id,
       User: user.id,
       Invites: amount,
       Total: amount,
@@ -36,7 +35,7 @@ module.exports = async (client, interaction, args) => {
       text: `Added **${amount}** invites to ${user}`,
       fields: [
         {
-          name: "📨┆Total invites",
+          name: "📨 ┆ Total invites",
           value: `${data.Invites}`,
           inline: true,
         },

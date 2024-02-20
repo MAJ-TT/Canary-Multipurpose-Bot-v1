@@ -29,12 +29,12 @@ module.exports = async (client, interaction, args) => {
         text: `You've worked and earned some money!`,
         fields: [
           {
-            name: `🦹‍♂️┆Sea Job`,
+            name: `🦹‍♂️ ┆ Sea Job`,
             value: `${replies[result]}`,
             inline: true
           },
           {
-            name: `${client.emotes.economy.coins}┆Earned`,
+            name: `${client.emotes.economy.coins} ┆ Earned`,
             value: `$${amount}`,
             inline: true
           }

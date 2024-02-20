@@ -3,187 +3,187 @@ const Discord = require("discord.js");
 module.exports = async (client) => {
   const fields = [
     {
-      name: `📺┆Activities`,
+      name: `📺 ┆ Activities`,
       value: `\`/activities\``,
       inline: true,
     },
     {
-      name: `🚫┆AFK`,
+      name: `🚫 ┆ AFK`,
       value: `\`/afk help\``,
       inline: true,
     },
     {
-      name: `📣┆Announcement`,
+      name: `📣 ┆ Announcement`,
       value: `\`/announcement help\``,
       inline: true,
     },
     {
-      name: `👮‍♂️┆Auto mod`,
+      name: `👮‍♂️ ┆ Auto mod`,
       value: `\`/automod help\``,
       inline: true,
     },
     {
-      name: `⚙️┆Auto setup`,
+      name: `⚙️ ┆ Auto setup`,
       value: `\`/autosetup help\``,
       inline: true,
     },
     {
-      name: `🎂┆Birthday`,
+      name: `🎂 ┆ Birthday`,
       value: `\`/birthdays help\``,
       inline: true,
     },
     {
-      name: `🤖┆Bot`,
+      name: `🤖 ┆ Bot`,
       value: `\`/bot help\``,
       inline: true,
     },
     {
-      name: `🎰┆Casino`,
+      name: `🎰 ┆ Casino`,
       value: `\`/casino help\``,
       inline: true,
     },
     {
-      name: `⚙┆Configuration`,
+      name: `⚙ ┆ Configuration`,
       value: `\`/config help\``,
       inline: true,
     },
     {
-      name: `💻┆Custom commands`,
+      name: `💻 ┆ Custom commands`,
       value: `\`/custom-commands help\``,
       inline: true,
     },
     {
-      name: `💳┆Sea Cash`,
+      name: `💳 ┆ Sea Cash`,
       value: `\`/Sea Cash help\``,
       inline: true,
     },
     {
-      name: `💰┆Economy`,
+      name: `💰 ┆ Economy`,
       value: `\`/economy help\``,
       inline: true,
     },
     {
-      name: `👪┆Family`,
+      name: `👪 ┆ Family`,
       value: `\`/family help\``,
       inline: true,
     },
     {
-      name: `😂┆Fun`,
+      name: `😂 ┆ Fun`,
       value: `\`/fun help\``,
       inline: true,
     },
     {
-      name: `🎮┆Games`,
+      name: `🎮 ┆ Games`,
       value: `\`/games help\``,
       inline: true,
     },
     {
-      name: `🥳┆Giveaway`,
+      name: `🥳 ┆ Giveaway`,
       value: `\`/giveaway help\``,
       inline: true,
     },
     {
-      name: `⚙️┆Guild settings`,
+      name: `⚙️ ┆ Guild settings`,
       value: `\`/guild help\``,
       inline: true,
     },
     {
-      name: `🖼┆Images`,
+      name: `🖼 ┆ Images`,
       value: `\`/images help\``,
       inline: true,
     },
     {
-      name: `📨┆Invites`,
+      name: `📨 ┆ Invites`,
       value: `\`/invites help\``,
       inline: true,
     },
     {
-      name: `🆙┆Leveling`,
+      name: `🆙 ┆ Leveling`,
       value: `\`/levels help\``,
       inline: true,
     },
     {
-      name: `💬┆Messages`,
+      name: `💬 ┆ Messages`,
       value: `\`/messages help\``,
       inline: true,
     },
     {
-      name: `👔┆Moderation`,
+      name: `👔 ┆ Moderation`,
       value: `\`/moderation help\``,
       inline: true,
     },
     {
-      name: `🎶┆Music`,
+      name: `🎶 ┆ Music`,
       value: `\`/music help\``,
       inline: true,
     },
     {
-      name: `📓┆Notepad`,
+      name: `📓 ┆ Notepad`,
       value: `\`/notepad help\``,
       inline: true,
     },
     {
-      name: `👤┆Profile`,
+      name: `👤 ┆ Profile`,
       value: `\`/profile help\``,
       inline: true,
     },
     {
-      name: `📻┆Radio`,
+      name: `📻 ┆ Radio`,
       value: `\`/radio help\``,
       inline: true,
     },
     {
-      name: `😛┆Reaction roles`,
+      name: `😛 ┆ Reaction roles`,
       value: `\`/reactionroles help\``,
       inline: true,
     },
     {
-      name: `🔍┆Search`,
+      name: `🔍 ┆ Search`,
       value: `\`/search help\``,
       inline: true,
     },
     {
-      name: `📊┆Server stats`,
+      name: `📊 ┆ Server stats`,
       value: `\`/serverstats help\``,
       inline: true,
     },
     {
-      name: `⚙️┆Setup`,
+      name: `⚙️ ┆ Setup`,
       value: `\`/setup help\``,
       inline: true,
     },
     {
-      name: `🎛┆Soundboard`,
+      name: `🎛 ┆ Soundboard`,
       value: `\`/soundboard help\``,
       inline: true,
     },
     {
-      name: `🗨️┆Sticky messages`,
+      name: `🗨️ ┆ Sticky messages`,
       value: `\`/stickymessages help\``,
       inline: true,
     },
     {
-      name: `💡┆Suggestions`,
+      name: `💡 ┆ Suggestions`,
       value: `\`/sugestions help\``,
       inline: true,
     },
     {
-      name: `🤝┆Thanks`,
+      name: `🤝 ┆ Thanks`,
       value: `\`/thanks help\``,
       inline: true,
     },
     {
-      name: `🎫┆Tickets`,
+      name: `🎫 ┆ Tickets`,
       value: `\`/tickets help\``,
       inline: true,
     },
     {
-      name: `⚒️┆Tools`,
+      name: `⚒️ ┆ Tools`,
       value: `\`/tools help\``,
       inline: true,
     },
     {
-      name: `🔊┆Voice`,
+      name: `🔊 ┆ Voice`,
       value: `\`/voice help\``,
       inline: true,
     },
@@ -223,7 +223,7 @@ module.exports = async (client) => {
           const row2 = new Discord.ActionRowBuilder().addComponents(
             new Discord.StringSelectMenuBuilder()
               .setCustomId("Bot-helppanel")
-              .setPlaceholder("❌┆Nothing selected")
+              .setPlaceholder("❌ ┆ Nothing selected")
               .addOptions([
                 {
                   label: `Commands`,

@@ -13,14 +13,6 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('additem')
-                .setDescription('Add a item to the economy store')
-                .addStringOption(option => option.setName('item').setDescription('Enter a item').setRequired(true))
-                .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
-
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('addmoney')
                 .setDescription('Add money to a user')
                 .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
@@ -37,12 +29,16 @@ module.exports = {
                 .setName('beg')
                 .setDescription('Beg for money')
         )
+
+/*
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('buy')
                 .setDescription('Buy items in the Bot store')
 
         )
+*/
+
         .addSubcommand(subcommand =>
             subcommand
                 .setName('clear')
@@ -60,6 +56,14 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
+                .setName('additem')
+                .setDescription('Add a item to the economy store')
+                .addStringOption(option => option.setName('item').setDescription('Enter a item').setRequired(true))
+                .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
+
+        )
+        .addSubcommand(subcommand =>
+            subcommand
                 .setName('deleteitem')
                 .setDescription('Delete an item from the economy store')
                 .addStringOption(option => option.setName('item').setDescription('Enter an item name').setRequired(true))
@@ -72,18 +76,8 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('fish')
-                .setDescription('Fish some fish')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('hourly')
                 .setDescription('Claim your hourly money')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('hunt')
-                .setDescription('Hunt some animals')
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -97,23 +91,21 @@ module.exports = {
                 .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
         )
+
+/*
         .addSubcommand(subcommand =>
             subcommand
                 .setName('present')
                 .setDescription('Get a weekly present')
         )
+*/
+
         .addSubcommand(subcommand =>
             subcommand
                 .setName('removemoney')
                 .setDescription('Remove money from a user')
                 .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('rob')
-                .setDescription('Rob a user')
-                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -135,11 +127,6 @@ module.exports = {
             subcommand
                 .setName('work')
                 .setDescription('Go to work')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('yearly')
-                .setDescription('Claim your yearly money')
         )
         .addSubcommand(subcommand =>
             subcommand

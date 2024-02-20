@@ -5,7 +5,7 @@ const Schema = require('../../database/models/afk');
 module.exports = async (client, interaction, args) => {
     const reason = interaction.options.getString('reason') || `Not specified`;
 
-    Schema.findOne({ Guild: interaction.guild.id, User: interaction.user.id }, async (err, data) => {
+    Schema.findOne({  User: interaction.user.id }, async (err, data) => {
         if (data) {
             return client.errNormal({ 
                 error: `You're already afk!`,
@@ -14,8 +14,8 @@ module.exports = async (client, interaction, args) => {
         }
         else {
             new Schema({
-                Guild: interaction.guild.id,
-                User: interaction.user.id,
+                 
+               User: interaction.user.id,
                 Message: reason
             }).save();
 

@@ -4,14 +4,18 @@ const Schema = require("../../database/models/economy");
 const Schema2 = require("../../database/models/economyTimeout");
 const store = require("../../database/models/economyStore");
 
+const dev = require('../../dev');
+
 module.exports = async (client, interaction, args) => {
 
-  const perms = await client.checkPerms({
-    flags: [Discord.PermissionsBitField.Flags.Administrator],
-    perms: [Discord.PermissionsBitField.Flags.Administrator]
-  }, interaction)
+  const badges = await dev.getBadges(interaction.user.id);
 
-  if (perms == false) return;
+    if (!badges.includes('DEVELOPER')) {
+    return client.errNormal({
+        error: 'You do not have permission to use this command'
+    }); 
+    }
+
 
 
     const row = new Discord.ActionRowBuilder() 

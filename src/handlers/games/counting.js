@@ -2,12 +2,13 @@ const Discord = require("discord.js");
 
 const countSchema = require("../../database/models/countChannel");
 const count = require("../../database/models/count");
-const math = require('mathjs');
+const math = require("mathjs");
 
 module.exports = async (client) => {
   client
     .on("messageCreate", async (message) => {
-      if (message.author.bot || message.channel.type === Discord.ChannelType.DM) return;
+      if (message.author.bot || message.channel.type === Discord.ChannelType.DM)
+        return;
 
       if (
         message.attachments.size > 0 ||
@@ -15,14 +16,13 @@ module.exports = async (client) => {
       )
         return;
       var content = message.content.toLowerCase();
-      if(isNaN(content)) {
+      if (isNaN(content)) {
         try {
           const result = math.evaluate(content);
           content = result;
         } catch (error) {
           return;
-        }        
-        
+        }
       }
 
       const data = await countSchema.findOne({
@@ -73,7 +73,7 @@ module.exports = async (client) => {
               return message.react(client.emotes.normal.error);
             } catch (error) {
               message.react(client.emotes.normal.error);
-              console.log(error)
+              console.log(error);
             }
           }
         }
@@ -99,14 +99,13 @@ module.exports = async (client) => {
         if (message.author.bot) return;
 
         var content = message.content.toLowerCase();
-        if(isNaN(content)) {
+        if (isNaN(content)) {
           try {
             const result = math.evaluate(content);
             content = result;
           } catch (error) {
             return;
-          }        
-          
+          }
         }
 
         const data = await countSchema.findOne({
@@ -130,5 +129,3 @@ module.exports = async (client) => {
     })
     .setMaxListeners(0);
 };
-
- 

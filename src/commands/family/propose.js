@@ -10,27 +10,27 @@ module.exports = async (client, interaction, args) => {
 
     if (author.id == target.id) return client.errNormal({ error: "You cannot marry yourself!", type: 'editreply' }, interaction);
 
-    Schema.findOne({ Guild: interaction.guild.id, Partner: author.id }, async (err, data) => {
+    Schema.findOne({   Partner: author.id }, async (err, data) => {
         if (data) {
             client.errNormal({ error: "Someone in the couple is already married!", type: 'editreply' }, interaction);
         }
         else {
-            Schema.findOne({ Guild: interaction.guild.id, Partner: target.id }, async (err, data) => {
+            Schema.findOne({   Partner: target.id }, async (err, data) => {
                 if (data) {
                     client.errNormal({ error: "Someone in the couple is already married!", type: 'editreply' }, interaction);
                 }
                 else {
-                    Schema.findOne({ Guild: interaction.guild.id, User: target.id, Parent: author.id }, async (err, data) => {
+                    Schema.findOne({  User: target.id, Parent: author.id }, async (err, data) => {
                         if (data) {
                             client.errNormal({ error: "You cannot marry a family member!", type: 'editreply' }, interaction);
                         }
                         else {
-                            Schema.findOne({ Guild: interaction.guild.id, User: author.id, Parent: target.id }, async (err, data) => {
+                            Schema.findOne({  User: author.id, Parent: target.id }, async (err, data) => {
                                 if (data) {
                                     client.errNormal({ error: "You cannot marry a family member!", type: 'editreply' }, interaction);
                                 }
                                 else {
-                                    Schema.findOne({ Guild: interaction.guild.id, User: author.id }, async (err, data) => {
+                                    Schema.findOne({  User: author.id }, async (err, data) => {
                                         if (data) {
                                             if (data.Children.includes(target.id)) {
                                                 client.errNormal({ error: "You cannot marry a family member!", type: 'editreply' }, interaction);
@@ -79,29 +79,29 @@ module.exports = async (client, interaction, args) => {
         interaction.channel.awaitMessageComponent({ filter, componentType: Discord.ComponentType.Button, time: 60000 }).then(async i => {
             if (i.customId == "propose_accept") {
 
-                Schema.findOne({ Guild: interaction.guild.id, User: author.id }, async (err, data) => {
+                Schema.findOne({  User: author.id }, async (err, data) => {
                     if (data) {
                         data.Partner = target.id
                         data.save();
                     }
                     else {
                         new Schema({
-                            Guild: interaction.guild.id,
-                            User: author.id,
+                             
+                           User: author.id,
                             Partner: target.id
                         }).save();
                     }
                 })
 
-                Schema.findOne({ Guild: interaction.guild.id, User: target.id }, async (err, data) => {
+                Schema.findOne({  User: target.id }, async (err, data) => {
                     if (data) {
                         data.Partner = author.id
                         data.save();
                     }
                     else {
                         new Schema({
-                            Guild: interaction.guild.id,
-                            User: target.id,
+                             
+                           User: target.id,
                             Partner: author.id
                         }).save();
                     }

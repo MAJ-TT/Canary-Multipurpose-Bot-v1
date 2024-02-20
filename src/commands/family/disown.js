@@ -18,9 +18,9 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 
-    Schema.findOne({ Guild: interaction.guild.id, Parent: target.id }, async (err, data) => {
+    Schema.findOne({   Parent: target.id }, async (err, data) => {
         if (data) {
-            Schema.findOne({ Guild: interaction.guild.id, User: data.Parent }, async (err, data2) => {
+            Schema.findOne({  User: data.Parent }, async (err, data2) => {
                 if (data2) {
                     client.embed({ title: `👪・Disowned`, desc: `${author} has disowned <@!${data.Parent}>`, type: 'editreply' }, interaction);
 
@@ -30,18 +30,18 @@ module.exports = async (client, interaction, args) => {
             })
         }
         else {
-            Schema.findOne({ Guild: interaction.guild.id, User: author.id }, async (err, data) => {
+            Schema.findOne({  User: author.id }, async (err, data) => {
                 if (data) {
                     if (data.Children.includes(target.username)) {
                         const filtered = data.Children.filter((user) => user !== target.username);
 
                         await Schema.findOneAndUpdate(guild, {
-                            Guild: interaction.guild.id,
-                            User: author.id,
+                             
+                           User: author.id,
                             Children: filtered
                         });
 
-                        Schema.findOne({ Guild: interaction.guild.id, Parent: author.id }, async (err, data) => {
+                        Schema.findOne({   Parent: author.id }, async (err, data) => {
                             if (data) {
                                 data.Parent = null;
                                 data.save();

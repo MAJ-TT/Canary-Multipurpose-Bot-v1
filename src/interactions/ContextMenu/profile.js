@@ -82,87 +82,87 @@ module.exports = {
             thumbnail: user.avatarURL({ dynamic: true }),
             fields: [
               {
-                name: "👤┆User",
+                name: "👤 ┆ User",
                 value: user.username,
                 inline: true,
               },
               {
-                name: "📘┆Discriminator",
+                name: "📘 ┆ Discriminator",
                 value: user.discriminator,
                 inline: true,
               },
               {
-                name: "🆔┆ID",
+                name: "🆔 ┆ ID",
                 value: user.id,
                 inline: true,
               },
               {
-                name: "👨‍👩‍👦┆Gender",
+                name: "👨‍👩‍👦 ┆ Gender",
                 value: `${data.Gender || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🔢┆Age",
+                name: "🔢 ┆ Age",
                 value: `${data.Age || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🎂┆Birthday",
+                name: "🎂 ┆ Birthday",
                 value: `${data.Birthday || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🎨┆Favorite color",
+                name: "🎨 ┆ Favorite color",
                 value: `${data.Color || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🐶┆Favorite pets",
+                name: "🐶 ┆ Favorite pets",
                 value: `${data.Pets.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🍕┆Favorite food",
+                name: "🍕 ┆ Favorite food",
                 value: `${data.Food.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🎶┆Favorite songs",
+                name: "🎶 ┆ Favorite songs",
                 value: `${data.Songs.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🎤┆Favorite artists",
+                name: "🎤 ┆ Favorite artists",
                 value: `${data.Artists.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🎬┆Favorite movies",
+                name: "🎬 ┆ Favorite movies",
                 value: `${data.Movies.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "👨‍🎤┆Favorite actors",
+                name: "👨‍🎤 ┆ Favorite actors",
                 value: `${data.Actors.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🏴┆Origin",
+                name: "🏴 ┆ Origin",
                 value: `${data.Orgin || "Not set"}`,
                 inline: true,
               },
               {
-                name: "🎮┆Hobby's",
+                name: "🎮 ┆ Hobby's",
                 value: `${data.Hobbys.join(", ") || "Not set"}`,
                 inline: true,
               },
               {
-                name: "😛┆Status",
+                name: "😛 ┆ Status",
                 value: `${data.Status || "Not set"}`,
                 inline: true,
               },
               {
-                name: "📛┆Bot Badges",
+                name: "📛 ┆ Bot Badges",
                 value: `${
                   Badges.FLAGS
                     ? Badges.FLAGS.map((flag) => badgeFlags[flag]).join(" ")
@@ -171,21 +171,21 @@ module.exports = {
                 inline: true,
               },
               {
-                name: "🏷️┆Discord Badges",
+                name: "🏷️ ┆ Discord Badges",
                 value: `${
-                  userFlags.length
+                  UserFlags.length
                     ? userFlags.map((flag) => flags[flag]).join(", ")
                     : "None" || "None"
                 }`,
                 inline: true,
               },
               {
-                name: "💳┆Sea Credits",
+                name: "💳 ┆ Sea Cash",
                 value: `${credits || "None"}`,
                 inline: true,
               },
               {
-                name: "ℹ️┆About me",
+                name: "ℹ️ ┆ About me",
                 value: `${data.Aboutme || "Not set"}`,
                 inline: false,
               },

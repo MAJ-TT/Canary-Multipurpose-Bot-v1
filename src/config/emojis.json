@@ -1,7 +1,7 @@
 {
     "normal": {
-        "error": "❌",
-        "check": "✔️",
+        "error": "<:crossMark:1189633016205693048>",
+        "check": "<:tick:1209363759450030200>",
         "music": "🎵",
         "volume": "🔉",
         "ball": "🎱",
@@ -15,13 +15,13 @@
         "clock": "⏰",
         "gift": "🎁",
         "medal": "🏅",
-        "party": "🎉",
+        "party": "<a:confetti:1198029916097224734>",
         "info": "ℹ️",
         "arrowDown": "⬇️",
         "arrowUp": "⬆️",
-        "Sea Credits": "💳",
+        "Sea Cash": "<:sea_cash:1203778608275923064>",
         "tv": "📺",
-        "slash": ""
+        "slash": "/"
     },
 
     "Bot": {
@@ -33,7 +33,7 @@
     "economy": {
         "pocket": "👛",
         "bank": "🏦",
-        "coins": "💰"
+        "coins": "<:sea_cash:1203778608275923064>"
     },
 
     "music": {
@@ -46,7 +46,7 @@
 
     "badges": {
         "bot": "🤖",
-        "management": "👑",
+        "management": "<a:ITETGcrown:996542021990879403>",
         "bug": "🐛",
         "developer": "👨‍💻",	
         "supporter": "👨‍🔧",
@@ -59,7 +59,7 @@
         "designer": "🎨",
         "active": "🔥",
         "event": "🎉",
-        "vip": "👑",
+        "vip": "<a:ITETGcrown:996542021990879403>",
         "marketing": "📈"
     },
 

@@ -167,7 +167,7 @@ module.exports = async (client, interaction, args) => {
               inline: true,
             },
             {
-              name: "💳 ┆ Sea Cash",
+              name: "💳 ┆ Slumber Cash",
               value: `${credits || "None"}`,
               inline: true,
             },

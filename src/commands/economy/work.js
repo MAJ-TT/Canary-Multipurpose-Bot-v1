@@ -17,7 +17,49 @@ module.exports = async (client, interaction, args) => {
     }
     else {
       let replies = [
-        'MAJ Worker', 'Slide Worker', 'Got inivtes in NJ!', 'Got invites in SS!', 'Professional Prostitue', 'Professional Bootty Claapper', 'Professional Gangster', 'Professional Blower of the job'
+        "MAJ Worker",
+        "Support Worker",
+        "Software Engineer",
+        "Accountant",
+        "Teacher",
+        "Nurse",
+        "Construction Worker",
+        "Chef",
+        "Police Officer",
+        "Farmer",
+        "Doctor",
+        "Lawyer",
+        "Architect",
+        "Mechanic",
+        "Electrician",
+        "Plumber",
+        "Artist",
+        "Musician",
+        "Writer",
+        "Designer",
+        "Photographer",
+        "Programmer",
+        "Scientist",
+        "Engineer",
+        "Salesperson",
+        "Marketing Specialist",
+        "Business Analyst",
+        "Project Manager",
+        "Consultant",
+        "Administrative Assistant",
+        "Customer Service Representative",
+        "Receptionist",
+        "Retail Associate",
+        "Waiter/Waitress",
+        "Landscaper",
+        "Housekeeper",
+        "Delivery Driver",
+        "Security Guard",
+        "Janitor",
+        "Barber/Hair Stylist",
+        "Fitness Trainer",
+        "Child Care Provider",
+
         ]
 
       let result = Math.floor((Math.random() * replies.length));
@@ -29,7 +71,7 @@ module.exports = async (client, interaction, args) => {
         text: `You've worked and earned some money!`,
         fields: [
           {
-            name: `🦹‍♂️ ┆ Sea Job`,
+            name: `🦹‍♂️ ┆ Slumber Job`,
             value: `${replies[result]}`,
             inline: true
           },

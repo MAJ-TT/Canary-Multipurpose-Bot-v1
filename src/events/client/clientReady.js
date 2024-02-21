@@ -62,7 +62,7 @@ module.exports = async (client) => {
         // `${totalGuilds} servers`,
         `${totalMembersFormatted} members`,
         `discord.gg/Amused`,
-        `discord.gg/SeaSoft`,
+        `discord.gg/Slumber`,
       ];
 
       const randomText =

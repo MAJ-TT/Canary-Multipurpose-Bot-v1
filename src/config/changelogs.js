@@ -20,7 +20,7 @@ module.exports = {
     "Removed snipe commands",
     "Unnecessary commands removed",
     "Some commands rearranged",
-    "**Bot 1 year pack** available for **10 Sea Cash**",
+    "**Bot 1 year pack** available for **10 Slumber Cash**",
     "Better error handling for commands",
   ],
 };

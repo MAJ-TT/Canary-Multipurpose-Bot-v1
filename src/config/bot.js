@@ -1,19 +1,19 @@
 module.exports = {
-    colors: {
-        succes: '#007C15',
-        error: "#710000",
-        normal: "#010101"
-    },
+  colors: {
+    succes: "#007C15",
+    error: "#710000",
+    normal: "#010101",
+  },
 
-    discord: {
-        prefix: `!`,
-        id: process.env.DISCORD_ID,
-        footer: `© Sea Soft - ${new Date().getFullYear()}`, 
-        botInvite: `https://discord.com/oauth2/authorize?&client_id=1177440829560856586&scope=applications.commands+bot&permissions=8`,
-        serverInvite: "https://discord.gg/RwPzkm4Ddw",
-    },
+  discord: {
+    prefix: `!`,
+    id: process.env.DISCORD_ID,
+    footer: `© Slumber - ${new Date().getFullYear()}`,
+    botInvite: `https://discord.com/oauth2/authorize?&client_id=1177440829560856586&scope=applications.commands+bot&permissions=8`,
+    serverInvite: "https://discord.gg/RwPzkm4Ddw",
+  },
 
-    wordList: `Airplane
+  wordList: `Airplane
 Ears
 Piano
 Angry
@@ -1062,7 +1062,5 @@ yet
 you
 young
 your
-yourself`
-}
-
- 
+yourself`,
+};

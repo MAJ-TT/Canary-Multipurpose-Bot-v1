@@ -53,8 +53,8 @@ module.exports = async (client) => {
       inline: true,
     },
     {
-      name: `💳 ┆ Sea Cash`,
-      value: `\`/Sea Cash help\``,
+      name: `💳 ┆ Slumber Cash`,
+      value: `\`/Slumber Cash help\``,
       inline: true,
     },
     {

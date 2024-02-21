@@ -10,25 +10,20 @@ module.exports = async (client, interaction, args, message) => {
           (e) =>
             `**${e.Item}** - ${client.emotes.economy.coins} \`$${e.Amount}\``
         );
-        await client.createLeaderboard(
-          `・Sea Empire Store`,
-          lb,
-          interaction
-        );
+        await client.createLeaderboard(`・Slumber Store`, lb, interaction);
       }
 
       // // Create and send your embeds
       // await client.embed({
       //   title: `${client.emotes.economy.coins}・Rewards`,
       //   desc: `
-      //   **$5 Nitro**  ***=*** \`$250 Sea Cash\`
-      //   **$10 Nitro**  ***=*** \`$500 Sea Creadits\`
-      //   **$5 Robux**    ***=*** \`$250 Sea Creadits\`
-      //   **$10 Robux**    ***=*** \`$500 Sea Cash\`
+      //   **$5 Nitro**  ***=*** \`$250 Slumber Cash\`
+      //   **$10 Nitro**  ***=*** \`$500 Slumber Cash\`
+      //   **$5 Robux**    ***=*** \`$250 Slumber Cash\`
+      //   **$10 Robux**    ***=*** \`$500 Slumber Cash\`
 
       //   `,
       // }, interaction.channel);
-
     });
   } catch (error) {
     console.error(error); // Log any errors

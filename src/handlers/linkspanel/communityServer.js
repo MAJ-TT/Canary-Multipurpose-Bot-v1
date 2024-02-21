@@ -43,7 +43,7 @@ module.exports = async (client) => {
         let row = new Discord.ActionRowBuilder().addComponents(
           new Discord.ButtonBuilder()
             .setLabel("Community Server")
-            .setURL("https://discord.gg/NwWScqzXA8")
+            .setURL("https://discord.gg/RwPzkm4Ddw")
             .setStyle(Discord.ButtonStyle.Link)
         );
 

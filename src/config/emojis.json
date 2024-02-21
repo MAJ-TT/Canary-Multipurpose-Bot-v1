@@ -1,7 +1,7 @@
 {
     "normal": {
-        "error": "<:crossMark:1189633016205693048>",
-        "check": "<:tick:1209363759450030200>",
+        "error": "<a:s_yellowmoon:1200220874008178769>",
+        "check": "<a:w_heart_1:1200186167589601352>",
         "music": "🎵",
         "volume": "🔉",
         "ball": "🎱",
@@ -15,11 +15,11 @@
         "clock": "⏰",
         "gift": "🎁",
         "medal": "🏅",
-        "party": "<a:confetti:1198029916097224734>",
+        "party": "<a:S_TADA:1200539591069933778>",
         "info": "ℹ️",
         "arrowDown": "⬇️",
         "arrowUp": "⬆️",
-        "Slumber Cash": "<:sea_cash:1203778608275923064>",
+        "Slumber Cash": "<:slumber_cash:1209913213790064710>",
         "tv": "📺",
         "slash": "/"
     },
@@ -33,7 +33,7 @@
     "economy": {
         "pocket": "👛",
         "bank": "🏦",
-        "coins": "<:sea_cash:1203778608275923064>"
+        "coins": "<:slumber_cash:1209913213790064710>"
     },
 
     "music": {
@@ -46,7 +46,7 @@
 
     "badges": {
         "bot": "🤖",
-        "management": "<a:ITETGcrown:996542021990879403>",
+        "management": "<a:WhiteCrown:884505763651911701>",
         "bug": "🐛",
         "developer": "👨‍💻",	
         "supporter": "👨‍🔧",
@@ -59,11 +59,11 @@
         "designer": "🎨",
         "active": "🔥",
         "event": "🎉",
-        "vip": "<a:ITETGcrown:996542021990879403>",
+        "vip": "<a:diamond:885616942604496946>",
         "marketing": "📈"
     },
 
     "animated": {
-        "loading": "🔄️"
+        "loading": "<a:s_sparkles:1200539689422164008>"
     }
 }

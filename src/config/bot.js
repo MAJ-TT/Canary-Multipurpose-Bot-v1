@@ -1,8 +1,8 @@
 module.exports = {
   colors: {
-    succes: "#007C15",
-    error: "#710000",
-    normal: "#010101",
+    succes: "#57F287",
+    error: "#ED4245",
+    normal: "#576AA6",
   },
 
   discord: {
@@ -10,7 +10,7 @@ module.exports = {
     id: process.env.DISCORD_ID,
     footer: `© Slumber - ${new Date().getFullYear()}`,
     botInvite: `https://discord.com/oauth2/authorize?&client_id=1177440829560856586&scope=applications.commands+bot&permissions=8`,
-    serverInvite: "https://discord.gg/RwPzkm4Ddw",
+    serverInvite: "https://discord.gg/uuXhAbNzWw",
   },
 
   wordList: `Airplane

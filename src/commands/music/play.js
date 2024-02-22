@@ -35,6 +35,7 @@ module.exports = async (client, interaction, args) => {
 
   if (!player) {
     player = client.player.create({
+      guildID: interaction.guild.id,
       voiceChannel: channel.id,
       textChannel: interaction.channel.id,
       selfDeafen: true,

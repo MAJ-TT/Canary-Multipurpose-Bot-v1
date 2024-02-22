@@ -24,11 +24,11 @@ module.exports = {
                 .setDescription('See your balance')
                 .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(false))
         )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('beg')
-                .setDescription('Beg for money')
-        )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('beg')
+        //         .setDescription('Beg for money')
+        // )
 
 /*
         .addSubcommand((subcommand) =>
@@ -44,16 +44,16 @@ module.exports = {
                 .setName('clear')
                 .setDescription('Clear the economy')
         )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('crime')
-                .setDescription('Commit a crime')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('daily')
-                .setDescription('Claim your daily money')
-        )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('crime')
+        //         .setDescription('Commit a crime')
+        // )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('daily')
+        //         .setDescription('Claim your daily money')
+        // )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('additem')
@@ -74,16 +74,16 @@ module.exports = {
                 .setDescription('Deposit money to the bank')
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
         )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('hourly')
-                .setDescription('Claim your hourly money')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('monthly')
-                .setDescription('Claim your monthly money')
-        )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('hourly')
+        //         .setDescription('Claim your hourly money')
+        // )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('monthly')
+        //         .setDescription('Claim your monthly money')
+        // )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('pay')
@@ -112,11 +112,11 @@ module.exports = {
                 .setName('store')
                 .setDescription('Show the store of this guild')
         )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('weekly')
-                .setDescription('Claim your weekly money')
-        )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('weekly')
+        //         .setDescription('Claim your weekly money')
+        // )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('withdraw')

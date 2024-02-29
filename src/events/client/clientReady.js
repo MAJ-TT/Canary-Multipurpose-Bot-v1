@@ -77,7 +77,7 @@ module.exports = async (client) => {
             url: "https://twitch.tv/discord", // Replace with your invite
           },
         ],
-        status: "idle",
+        status: "dnd",
       });
     });
   }, 20000); // 20000 milliseconds = update every 20 seconds

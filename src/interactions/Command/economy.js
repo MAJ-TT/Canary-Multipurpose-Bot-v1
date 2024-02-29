@@ -123,11 +123,11 @@ module.exports = {
                 .setDescription('Withdraw your money')
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
         )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('work')
-                .setDescription('Go to work')
-        )
+        // .addSubcommand(subcommand =>
+        //     subcommand
+        //         .setName('work')
+        //         .setDescription('Go to work')
+        // )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('leaderboard')
